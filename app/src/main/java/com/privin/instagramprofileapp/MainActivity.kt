@@ -26,7 +26,12 @@ class MainActivity : ComponentActivity() {
 fun InstagramProfileApp(){
     InstagramProfileAppTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-            ProfileScreen(modifier = Modifier.padding(innerPadding))
+            ProfileScreen(
+                userName = "cristiano",
+                name = "Cristiano Ronaldo",
+                bio = "SIUUUbscribe to my Youtube Channel!",
+                modifier = Modifier.padding(innerPadding)
+            )
         }
     }
 }
