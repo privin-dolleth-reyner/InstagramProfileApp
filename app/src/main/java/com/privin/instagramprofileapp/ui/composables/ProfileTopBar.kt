@@ -32,13 +32,13 @@ fun ProfileTopBar(
     modifier: Modifier = Modifier
 ){
     Row(modifier = modifier, horizontalArrangement = Arrangement.SpaceAround) {
-        Row(modifier = Modifier.weight(1f).padding(horizontal = 16.dp)) {
+        Row(modifier = Modifier.weight(1f)) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                 contentDescription = "Back",
                 modifier = Modifier.size(32.dp)
                     .align(Alignment.CenterVertically)
-                    .padding(horizontal = 4.dp)
+                    .padding(end = 4.dp)
             )
             Text(
                 text = title,
