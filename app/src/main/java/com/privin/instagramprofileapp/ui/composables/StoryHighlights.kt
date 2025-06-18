@@ -1,6 +1,5 @@
 package com.privin.instagramprofileapp.ui.composables
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,8 +18,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.privin.instagramprofileapp.R
+import com.privin.instagramprofileapp.models.Story
 
-data class Story(@DrawableRes val image: Int, val title: String)
 
 @Composable
 fun StoryHighlights(

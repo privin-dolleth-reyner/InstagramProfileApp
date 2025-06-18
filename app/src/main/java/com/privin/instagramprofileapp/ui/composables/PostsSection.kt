@@ -20,16 +20,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.privin.instagramprofileapp.R
-
-data class Post(
-    @DrawableRes val image: Int
-)
-
-data class PostsCollection(
-    val name: String,
-    @DrawableRes val icon: Int,
-    val posts: List<Post> = emptyList()
-)
+import com.privin.instagramprofileapp.models.Post
+import com.privin.instagramprofileapp.models.PostsCollection
 
 @Composable
 fun PostsSection(
