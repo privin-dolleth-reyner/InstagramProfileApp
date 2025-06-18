@@ -1,5 +1,6 @@
 package com.privin.instagramprofileapp.ui.screens
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -18,20 +19,24 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.privin.instagramprofileapp.R
-import com.privin.instagramprofileapp.ui.composables.Post
-import com.privin.instagramprofileapp.ui.composables.PostsCollection
+import com.privin.instagramprofileapp.models.Post
+import com.privin.instagramprofileapp.models.PostsCollection
+import com.privin.instagramprofileapp.models.Story
+import com.privin.instagramprofileapp.models.UserProfile
 import com.privin.instagramprofileapp.ui.composables.PostsSection
 import com.privin.instagramprofileapp.ui.composables.ProfileActions
 import com.privin.instagramprofileapp.ui.composables.ProfileHeader
 import com.privin.instagramprofileapp.ui.composables.ProfileTopBar
-import com.privin.instagramprofileapp.ui.composables.Story
 import com.privin.instagramprofileapp.ui.composables.StoryHighlights
 
 @Composable
-fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifier = Modifier) {
+fun ProfileScreen(
+    userProfile: UserProfile,
+    modifier: Modifier = Modifier
+) {
     Column(modifier = modifier) {
         ProfileTopBar(
-            title = userName,
+            title = userProfile.userName,
             isVerified = true,
             modifier = Modifier
                 .fillMaxWidth()
@@ -40,16 +45,16 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
         Spacer(modifier = Modifier.height(8.dp))
         ProfileHeader(
             profilePic = painterResource(R.mipmap.profile_pic),
-            posts = "3,907",
-            followers = "657M",
-            following = "603",
+            posts = userProfile.stats["posts"] ?: "",
+            followers = userProfile.stats["followers"] ?: "",
+            following = userProfile.stats["following"] ?: "",
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            text = name,
+            text = userProfile.displayName,
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.SemiBold,
             textAlign = TextAlign.Start,
@@ -58,7 +63,7 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
-            text = bio,
+            text = userProfile.bio,
             style = MaterialTheme.typography.bodyMedium,
             fontWeight = FontWeight.Normal,
             textAlign = TextAlign.Start,
@@ -73,7 +78,34 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
         )
         Spacer(modifier = Modifier.height(4.dp))
         StoryHighlights(
-            stories = listOf(
+            stories = userProfile.storyHighlights,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+        PostsSection(
+            postsCollections = userProfile.postsCollections,
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
+}
+
+@Preview
+@Composable
+fun ProfileScreenPreview() {
+    ProfileScreen(
+        userProfile = UserProfile(
+            userName = "cristiano",
+            displayName = "Cristiano Ronaldo",
+            profilePic = R.mipmap.profile_pic,
+            bio = "SIUUUbscribe to my Youtube Channel!",
+            stats = mapOf(
+                "posts" to "3,907",
+                "followers" to "657M",
+                "following" to "603"
+            ),
+            storyHighlights = listOf(
                 Story(R.mipmap.story_1, "Portugal"),
                 Story(R.mipmap.story_2, "FIFA"),
                 Story(R.mipmap.story_3, "League"),
@@ -84,12 +116,6 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
                 Story(R.mipmap.story_8, "FIFA"),
                 Story(R.mipmap.story_9, "Portugal"),
             ),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 8.dp)
-        )
-        Spacer(modifier = Modifier.height(4.dp))
-        PostsSection(
             postsCollections = listOf(
                 PostsCollection(
                     name = "Posts",
@@ -116,19 +142,8 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
                     icon = R.drawable.ic_tagged,
                     posts = emptyList()
                 ),
-            ),
-            modifier = Modifier.fillMaxWidth()
-        )
-    }
-}
-
-@Preview
-@Composable
-fun ProfileScreenPreview() {
-    ProfileScreen(
-        userName = "cristiano",
-        name = "Cristiano Ronaldo",
-        bio = "SIUUUbscribe to my Youtube Channel!",
+            )
+        ),
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color.White)
