@@ -18,6 +18,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.privin.instagramprofileapp.R
+import com.privin.instagramprofileapp.ui.composables.Post
+import com.privin.instagramprofileapp.ui.composables.PostsCollection
+import com.privin.instagramprofileapp.ui.composables.PostsSection
 import com.privin.instagramprofileapp.ui.composables.ProfileActions
 import com.privin.instagramprofileapp.ui.composables.ProfileHeader
 import com.privin.instagramprofileapp.ui.composables.ProfileTopBar
@@ -76,6 +79,38 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+        PostsSection(
+            postsCollections = listOf(
+                PostsCollection(
+                    name = "Posts",
+                    icon = R.drawable.ic_grid,
+                    posts = listOf(
+                        Post(R.mipmap.story_1),
+                        Post(R.mipmap.story_2),
+                        Post(R.mipmap.story_3),
+                        Post(R.mipmap.story_4),
+                        Post(R.mipmap.story_5),
+                        Post(R.mipmap.story_6),
+                        Post(R.mipmap.story_7),
+                        Post(R.mipmap.story_8),
+                        Post(R.mipmap.story_9),
+                    )
+                ),
+                PostsCollection(
+                    name = "Reels",
+                    icon = R.drawable.ic_reel,
+                    posts = emptyList()
+                ),
+                PostsCollection(
+                    name = "Tags",
+                    icon = R.drawable.ic_tagged,
+                    posts = emptyList()
+                ),
+
+            ),
+            modifier = Modifier.fillMaxWidth()
         )
     }
 }
