@@ -28,12 +28,14 @@ import com.privin.instagramprofileapp.ui.composables.Story
 import com.privin.instagramprofileapp.ui.composables.StoryHighlights
 
 @Composable
-fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifier = Modifier){
-    Column(modifier = modifier.padding(horizontal = 16.dp)) {
+fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifier = Modifier) {
+    Column(modifier = modifier) {
         ProfileTopBar(
             title = userName,
             isVerified = true,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
         )
         Spacer(modifier = Modifier.height(8.dp))
         ProfileHeader(
@@ -41,7 +43,9 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
             posts = "3,907",
             followers = "657M",
             following = "603",
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
@@ -50,6 +54,7 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
             fontWeight = FontWeight.SemiBold,
             textAlign = TextAlign.Start,
             modifier = Modifier
+                .padding(horizontal = 16.dp)
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
@@ -58,27 +63,30 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
             fontWeight = FontWeight.Normal,
             textAlign = TextAlign.Start,
             modifier = Modifier
+                .padding(horizontal = 16.dp)
         )
         Spacer(modifier = Modifier.height(4.dp))
         ProfileActions(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp)
         )
         Spacer(modifier = Modifier.height(4.dp))
         StoryHighlights(
             stories = listOf(
-                Story(R.mipmap.story_1,"Portugal"),
-                Story(R.mipmap.story_2,"FIFA"),
-                Story(R.mipmap.story_3,"League"),
-                Story(R.mipmap.story_4,"World cup"),
-                Story(R.mipmap.story_5,"FIFA"),
-                Story(R.mipmap.story_6,"League"),
-                Story(R.mipmap.story_7,"World cup"),
-                Story(R.mipmap.story_8,"FIFA"),
-                Story(R.mipmap.story_9,"Portugal"),
+                Story(R.mipmap.story_1, "Portugal"),
+                Story(R.mipmap.story_2, "FIFA"),
+                Story(R.mipmap.story_3, "League"),
+                Story(R.mipmap.story_4, "World cup"),
+                Story(R.mipmap.story_5, "FIFA"),
+                Story(R.mipmap.story_6, "League"),
+                Story(R.mipmap.story_7, "World cup"),
+                Story(R.mipmap.story_8, "FIFA"),
+                Story(R.mipmap.story_9, "Portugal"),
             ),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(8.dp)
+                .padding(vertical = 8.dp)
         )
         Spacer(modifier = Modifier.height(4.dp))
         PostsSection(
@@ -108,7 +116,6 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
                     icon = R.drawable.ic_tagged,
                     posts = emptyList()
                 ),
-
             ),
             modifier = Modifier.fillMaxWidth()
         )
@@ -117,7 +124,7 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
 
 @Preview
 @Composable
-fun ProfileScreenPreview(){
+fun ProfileScreenPreview() {
     ProfileScreen(
         userName = "cristiano",
         name = "Cristiano Ronaldo",
