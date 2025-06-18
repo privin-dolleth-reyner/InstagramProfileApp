@@ -1,6 +1,5 @@
 package com.privin.instagramprofileapp.ui.composables
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
