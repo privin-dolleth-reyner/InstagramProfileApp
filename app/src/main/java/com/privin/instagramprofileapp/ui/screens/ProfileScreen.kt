@@ -21,6 +21,8 @@ import com.privin.instagramprofileapp.R
 import com.privin.instagramprofileapp.ui.composables.ProfileActions
 import com.privin.instagramprofileapp.ui.composables.ProfileHeader
 import com.privin.instagramprofileapp.ui.composables.ProfileTopBar
+import com.privin.instagramprofileapp.ui.composables.Story
+import com.privin.instagramprofileapp.ui.composables.StoryHighlights
 
 @Composable
 fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifier = Modifier){
@@ -57,6 +59,23 @@ fun ProfileScreen(userName: String, name: String, bio: String, modifier: Modifie
         Spacer(modifier = Modifier.height(4.dp))
         ProfileActions(
             modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+        StoryHighlights(
+            stories = listOf(
+                Story(R.mipmap.story_1,"Portugal"),
+                Story(R.mipmap.story_2,"FIFA"),
+                Story(R.mipmap.story_3,"League"),
+                Story(R.mipmap.story_4,"World cup"),
+                Story(R.mipmap.story_5,"FIFA"),
+                Story(R.mipmap.story_6,"League"),
+                Story(R.mipmap.story_7,"World cup"),
+                Story(R.mipmap.story_8,"FIFA"),
+                Story(R.mipmap.story_9,"Portugal"),
+            ),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
         )
     }
 }
