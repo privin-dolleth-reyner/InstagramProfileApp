@@ -1,6 +1,7 @@
 package com.privin.instagramprofileapp.ui.composables
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -24,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.privin.instagramprofileapp.R
+import com.privin.instagramprofileapp.ui.theme.blue
 
 @Composable
 fun ProfileTopBar(
@@ -54,7 +56,7 @@ fun ProfileTopBar(
                     painter = painterResource(R.drawable.ic_verification_badge),
                     contentDescription = null,
                     modifier = Modifier.size(16.dp).align(Alignment.CenterVertically),
-                    colorFilter = ColorFilter.tint(color = Color(0xFF0994FF))
+                    colorFilter = ColorFilter.tint(color = blue)
                 )
             }
         }
@@ -88,5 +90,6 @@ fun ProfileTopBarPreview(){
         title = "cristiano" ,
         isVerified = true,
         modifier = Modifier.fillMaxWidth()
+            .background(color = Color.White)
     )
 }
