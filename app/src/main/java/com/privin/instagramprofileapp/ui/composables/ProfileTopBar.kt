@@ -32,13 +32,14 @@ fun ProfileTopBar(
     title: String,
     isVerified: Boolean,
     modifier: Modifier = Modifier
-){
+) {
     Row(modifier = modifier, horizontalArrangement = Arrangement.SpaceAround) {
         Row(modifier = Modifier.weight(1f)) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                 contentDescription = "Back",
-                modifier = Modifier.size(32.dp)
+                modifier = Modifier
+                    .size(32.dp)
                     .align(Alignment.CenterVertically)
                     .padding(end = 4.dp)
             )
@@ -48,14 +49,17 @@ fun ProfileTopBar(
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 textAlign = TextAlign.Start,
-                modifier = Modifier.padding(8.dp)
+                modifier = Modifier
+                    .padding(8.dp)
                     .weight(0.8f, fill = false)
             )
-            if (isVerified){
+            if (isVerified) {
                 Image(
                     painter = painterResource(R.drawable.ic_verification_badge),
                     contentDescription = null,
-                    modifier = Modifier.size(16.dp).align(Alignment.CenterVertically),
+                    modifier = Modifier
+                        .size(16.dp)
+                        .align(Alignment.CenterVertically),
                     colorFilter = ColorFilter.tint(color = blue)
                 )
             }
@@ -64,7 +68,8 @@ fun ProfileTopBar(
         Image(
             painter = painterResource(R.drawable.ic_notification),
             contentDescription = "Notification",
-            modifier = Modifier.size(32.dp)
+            modifier = Modifier
+                .size(32.dp)
                 .align(Alignment.CenterVertically)
                 .padding(horizontal = 4.dp)
         )
@@ -74,9 +79,10 @@ fun ProfileTopBar(
         Image(
             painter = painterResource(R.drawable.ic_more),
             contentDescription = "More",
-            modifier = Modifier.size(32.dp)
+            modifier = Modifier
+                .size(32.dp)
                 .align(Alignment.CenterVertically)
-                .padding(horizontal = 4.dp)
+                .padding(start = 4.dp)
         )
 
         Spacer(modifier = Modifier.width(8.dp))
@@ -85,11 +91,12 @@ fun ProfileTopBar(
 
 @Preview
 @Composable
-fun ProfileTopBarPreview(){
+fun ProfileTopBarPreview() {
     ProfileTopBar(
-        title = "cristiano" ,
+        title = "cristiano",
         isVerified = true,
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .background(color = Color.White)
     )
 }

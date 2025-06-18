@@ -58,7 +58,9 @@ fun PostsSection(
                         painter = painterResource(postsCollection.icon),
                         contentDescription = postsCollection.name,
                         tint = if (selectedTabIndex == index) Color.Black else Color.LightGray,
-                        modifier = Modifier.size(24.dp)
+                        modifier = Modifier
+                            .size(42.dp)
+                            .padding(8.dp)
                     )
 
                 }
