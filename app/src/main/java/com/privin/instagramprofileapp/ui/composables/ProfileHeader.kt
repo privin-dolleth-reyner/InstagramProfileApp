@@ -18,7 +18,7 @@ fun ProfileHeader(profilePic: Painter, posts: String, followers: String, followi
     Row(modifier = modifier, horizontalArrangement = Arrangement.SpaceBetween) {
         InstagramImage(
             image = profilePic,
-            isHighlights = true,
+            isHighlights = false,
             modifier = Modifier.size(100.dp)
                 .align(Alignment.CenterVertically)
         )
