@@ -11,6 +11,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.privin.instagramprofileapp.ui.theme.blue
 
+/*
+ Displays Follow and message buttons row
+ */
 @Composable
 fun ProfileActions(
     modifier: Modifier = Modifier,

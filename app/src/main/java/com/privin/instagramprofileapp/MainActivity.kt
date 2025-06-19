@@ -26,6 +26,7 @@ class MainActivity : ComponentActivity() {
 fun InstagramProfileApp() {
     InstagramProfileAppTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+            // simple initialisation done here, in production it would be di injected
             val profileViewModel = ProfileViewModel()
             ProfileScreen(
                 userProfile = profileViewModel.userProfile,

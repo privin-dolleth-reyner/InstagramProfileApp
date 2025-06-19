@@ -16,6 +16,9 @@ import androidx.compose.ui.unit.dp
 import com.privin.instagramprofileapp.R
 import com.privin.instagramprofileapp.models.Post
 
+/*
+ Composable to display all posts for each section respectively Posts, reels, tagged
+ */
 @Composable
 fun PostsGrid(
     posts: List<Post>,
