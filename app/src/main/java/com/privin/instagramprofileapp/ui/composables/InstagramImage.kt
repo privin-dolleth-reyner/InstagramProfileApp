@@ -17,6 +17,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.privin.instagramprofileapp.R
 
+/*
+ Common composable for Profile picture and Story Highlight (Bubbles)
+ */
 @Composable
 fun InstagramImage(image: Painter, isHighlights: Boolean, modifier: Modifier = Modifier){
     Image(

@@ -15,6 +15,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.privin.instagramprofileapp.R
 
+/*
+ Composable to display Profile pic, posts count, followers count, following count (row)
+ */
 @Composable
 fun ProfileHeader(profilePic: Painter, posts: String, followers: String, following: String, modifier: Modifier = Modifier){
     Row(modifier = modifier, horizontalArrangement = Arrangement.SpaceBetween) {

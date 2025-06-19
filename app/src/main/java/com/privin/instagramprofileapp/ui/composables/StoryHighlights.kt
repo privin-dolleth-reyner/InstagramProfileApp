@@ -20,7 +20,9 @@ import androidx.compose.ui.unit.dp
 import com.privin.instagramprofileapp.R
 import com.privin.instagramprofileapp.models.Story
 
-
+/*
+Composable to display list of story highlights
+ */
 @Composable
 fun StoryHighlights(
     stories: List<Story>,

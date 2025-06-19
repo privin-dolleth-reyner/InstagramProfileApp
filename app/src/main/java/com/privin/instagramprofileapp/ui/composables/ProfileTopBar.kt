@@ -27,6 +27,9 @@ import androidx.compose.ui.unit.sp
 import com.privin.instagramprofileapp.R
 import com.privin.instagramprofileapp.ui.theme.blue
 
+/*
+Composable to display top navigation bar, includes username, verified badge , bell notification and more settings
+ */
 @Composable
 fun ProfileTopBar(
     title: String,

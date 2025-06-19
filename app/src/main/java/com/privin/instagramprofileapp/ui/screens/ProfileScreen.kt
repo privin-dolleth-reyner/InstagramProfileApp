@@ -34,6 +34,7 @@ fun ProfileScreen(
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
+        // Top navigation bar
         ProfileTopBar(
             title = userProfile.userName,
             isVerified = true,
@@ -42,6 +43,8 @@ fun ProfileScreen(
                 .padding(horizontal = 16.dp)
         )
         Spacer(modifier = Modifier.height(8.dp))
+
+        // Profile pic, posts, followers, following count
         ProfileHeader(
             profilePic = painterResource(R.mipmap.profile_pic),
             posts = userProfile.stats["posts"] ?: "",
@@ -52,6 +55,8 @@ fun ProfileScreen(
                 .padding(horizontal = 16.dp)
         )
         Spacer(modifier = Modifier.height(8.dp))
+
+        // Display name below the profile pic
         Text(
             text = userProfile.displayName,
             style = MaterialTheme.typography.titleMedium,
@@ -61,6 +66,8 @@ fun ProfileScreen(
                 .padding(horizontal = 16.dp)
         )
         Spacer(modifier = Modifier.height(4.dp))
+
+        // User Bio
         Text(
             text = userProfile.bio,
             style = MaterialTheme.typography.bodyMedium,
@@ -70,12 +77,16 @@ fun ProfileScreen(
                 .padding(horizontal = 16.dp)
         )
         Spacer(modifier = Modifier.height(4.dp))
+
+        // Follow and message buttons
         ProfileActions(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 8.dp)
         )
         Spacer(modifier = Modifier.height(4.dp))
+
+        // Story Highlights (Bubbles)
         StoryHighlights(
             stories = userProfile.storyHighlights,
             modifier = Modifier
@@ -83,6 +94,8 @@ fun ProfileScreen(
                 .padding(vertical = 8.dp)
         )
         Spacer(modifier = Modifier.height(4.dp))
+
+        // Posts, Reels, Tagged posts
         PostsSection(
             postsCollections = userProfile.postsCollections,
             modifier = Modifier.fillMaxWidth()

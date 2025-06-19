@@ -22,6 +22,9 @@ import com.privin.instagramprofileapp.R
 import com.privin.instagramprofileapp.models.Post
 import com.privin.instagramprofileapp.models.PostsCollection
 
+/*
+ Composable to display Posts, reels, tagged (row) and their respective posts
+ */
 @Composable
 fun PostsSection(
     postsCollections: List<PostsCollection>,

@@ -14,6 +14,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.privin.instagramprofileapp.ui.theme.blue
 
+/*
+ Common composable for follow and message buttons
+ */
 @Composable
 fun ActionButton(
     text: String,
